@@ -23,6 +23,13 @@ export const WrapperFullName = styled.h2`
   color: #2d3748;
 `;
 
+export const WrapperLanguage = styled.h2`
+  font-size: 16px;
+  font-weight: bold;
+  margin: 8px 0;
+  color: #2d3748;
+`;
+
 export const WrapperLink = styled.a`
   font-size: 16px;
   font-weight: bold;

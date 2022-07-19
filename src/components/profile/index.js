@@ -1,6 +1,7 @@
 import React from "react";
 import useGithub from "../../hooks/github-hooks";
 import * as S from "./styled";
+import Translator from "../i18n/translator";
 
 const Profile = () => {
   const { githubState } = useGithub();
@@ -12,7 +13,9 @@ const Profile = () => {
         <div>
           <h1>{githubState.user.name}</h1>
           <S.WrapperUserGeneric>
-            <h3>Username:</h3>
+            <h3>
+              <Translator path="profile.username" />:
+            </h3>
             <a
               href={githubState.user.html_url}
               target="_blank"
@@ -22,15 +25,21 @@ const Profile = () => {
             </a>
           </S.WrapperUserGeneric>
           <S.WrapperUserGeneric>
-            <h3>Company:</h3>
+            <h3>
+              <Translator path="profile.company" />:
+            </h3>
             <span>{githubState.user.company}</span>
           </S.WrapperUserGeneric>
           <S.WrapperUserGeneric>
-            <h3>Location:</h3>
+            <h3>
+              <Translator path="profile.location" />:
+            </h3>
             <span>{githubState.user.location}</span>
           </S.WrapperUserGeneric>
           <S.WrapperUserGeneric>
-            <h3>Blog:</h3>
+            <h3>
+              <Translator path="profile.blog" />:
+            </h3>
             <a href={githubState.user.blog} target="_blank" rel="noreferrer">
               {githubState.user.blog}
             </a>
@@ -38,19 +47,27 @@ const Profile = () => {
         </div>
         <S.WrapperStatusCount>
           <div>
-            <h4>Followers</h4>
+            <h4>
+              <Translator path="profile.followers" />
+            </h4>
             <span> {githubState.user.followers}</span>
           </div>
           <div>
-            <h4>Followings</h4>
+            <h4>
+              <Translator path="profile.following" />
+            </h4>
             <span> {githubState.user.following}</span>
           </div>
           <div>
-            <h4>Gists</h4>
+            <h4>
+              <Translator path="profile.gists" />
+            </h4>
             <span> {githubState.user.public_gists}</span>
           </div>
           <div>
-            <h4>Repos</h4>
+            <h4>
+              <Translator path="profile.repositories" />
+            </h4>
             <span> {githubState.user.public_repos}</span>
           </div>
         </S.WrapperStatusCount>

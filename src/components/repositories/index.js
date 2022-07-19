@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import useGithub from "../../hooks/github-hooks";
 import RepositoryItem from "../repository-item";
 import * as S from "./styled";
+import Translator from "../i18n/translator";
 
 const Repositories = () => {
   const { githubState, getUserRepos, getUserStarred } = useGithub();
@@ -25,8 +26,12 @@ const Repositories = () => {
           selectedTabPanelClassName="is-selected"
         >
           <S.WrapperTabList>
-            <S.WrapperTab>Repositories</S.WrapperTab>
-            <S.WrapperTab>Starred</S.WrapperTab>
+            <S.WrapperTab>
+              <Translator path="repositories.repos" />
+            </S.WrapperTab>
+            <S.WrapperTab>
+              <Translator path="repositories.starred" />
+            </S.WrapperTab>
           </S.WrapperTabList>
           <S.WrapperTabPanel>
             <S.WrapperList>
@@ -36,6 +41,7 @@ const Repositories = () => {
                   name={item.name}
                   linkToRepo={item.full_name}
                   fullName={item.full_name}
+                  language={item.language}
                 />
               ))}
             </S.WrapperList>

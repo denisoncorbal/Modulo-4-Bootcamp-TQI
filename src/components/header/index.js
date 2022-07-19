@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import * as S from "./styled";
 import useGithub from "../../hooks/github-hooks";
+import I18n from "../i18n/i18n";
+import Translator from "../i18n/translator";
 
 const Header = () => {
   const { getUser } = useGithub();
@@ -13,14 +15,17 @@ const Header = () => {
 
   return (
     <header>
+      <I18n />
       <S.Wrapper>
         <input
           type="text"
-          placeholder="Digite o username para pesquisa..."
+          placeholder={Translator({ path: "header.usernameInput" })}
           onChange={(event) => setUsernameForSearch(event.target.value)}
         />
         <button type="submit" onClick={submitGetUser}>
-          <span>Buscar</span>
+          <span>
+            <Translator path="header.submitSearch" />
+          </span>
         </button>
       </S.Wrapper>
     </header>

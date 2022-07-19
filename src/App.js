@@ -4,6 +4,7 @@ import NoSearch from "./components/no-search";
 import Profile from "./components/profile";
 import Repositories from "./components/repositories";
 import useGithub from "./hooks/github-hooks";
+import Translator from "./components/i18n/translator";
 
 const App = () => {
   const { githubState } = useGithub();
@@ -12,7 +13,9 @@ const App = () => {
       {githubState.hasUser ? (
         <>
           {githubState.loading ? (
-            <p>Loading</p>
+            <p>
+              <Translator path="app.loading" />
+            </p>
           ) : (
             <>
               <Profile />
