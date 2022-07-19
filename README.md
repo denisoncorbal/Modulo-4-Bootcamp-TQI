@@ -14,6 +14,10 @@ We will create an application using the github public api.
 - Search repo by username
 - Search starred by username
 
+### Features added
+- Internacionalization
+- Exhibition of languagem from repos
+
 ### Preview
 
 Print of the finished project.
@@ -25,6 +29,9 @@ Print of the finished project.
 - [axios](https://www.npmjs.com/package/axios)
 - [react-tabs](https://www.npmjs.com/package/react-tabs)
 - [styled-components](https://styled-components.com/)
+
+### Libraries added
+- [i18next], [react-i18next] e [i18next-browser-languagedetector] (https://react.i18next.com/)
 
 ## Available Scripts
 
